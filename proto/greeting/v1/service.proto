@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package greeting.v1;
+
+option go_package = "github.com/fbonareis/go-grpc/pkg/pb/greeting/v1;greeting_v1";
+
+import "greeting/common/v1/message.proto";
+
+service GreeterService {
+  rpc Greet(GreetRequest) returns (GreetResponse) {}
+}
+
+message GreetRequest {
+  greeting.common.v1.Message msg = 1;
+}
+
+message GreetResponse {
+  string resp = 1;
+}

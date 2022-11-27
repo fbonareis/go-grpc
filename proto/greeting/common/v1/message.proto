@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package greeting.common.v1;
+
+option go_package = "github.com/fbonareis/go-grpc/pkg/pb/greeting/common/v1;common_v1";
+
+message Message {
+  enum Greeter {
+    HI = 0;
+    HELLO = 1;
+    MORNING = 2;
+    EVENING = 3;
+  }
+
+  Greeter greeting = 1;
+  string name = 2;
+}
