@@ -33,7 +33,7 @@ func main() {
 	greeting_v1.RegisterGreeterServiceServer(server, &svc.GreeterService{})
 	logger.Info("Handlers registered")
 
-	// Executa um listener da aplicaçnao em uma goroutine apartada.
+	// Executa um listener da aplicaçao em uma goroutine apartada.
 	go signalsListener(server)
 
 	// Inicializa o servidor.
@@ -44,7 +44,6 @@ func main() {
 }
 
 // initListener instancia um novo listener TCP.
-// Em caso de erro, lança uma exceção.
 func initListener() {
 	var err error
 	addr := "localhost:50051"
